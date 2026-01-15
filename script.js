@@ -1,9 +1,20 @@
 const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+const navMenu = document.getElementById("navLinks");
 
+// Toggle mobile menu
 menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    navMenu.classList.toggle("active");
 });
+
+// Close menu when a link is clicked
+const navLinks = document.querySelectorAll(".nav-links a");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
+
 
 //Scroll dynamism feature
 
